@@ -1,0 +1,6 @@
+@LineMessaging_HostAddress = http://localhost:5042
+
+GET {{LineMessaging_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
