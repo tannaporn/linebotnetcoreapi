@@ -1,3 +1,5 @@
+using LineMessaging.Controllers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddSingleton<EmailMonitorService>();
+builder.Services.AddHostedService(
+    provider => provider.GetRequiredService<EmailMonitorService>()
+);
+
 
 var app = builder.Build();
 
