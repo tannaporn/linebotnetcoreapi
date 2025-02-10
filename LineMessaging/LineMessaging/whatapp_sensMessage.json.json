@@ -1,0 +1,12 @@
+{
+  "messaging_product": "whatsapp",
+  "to": {
+    "type": "text",
+    "text": {
+      "body": "Hello, this is a message from the WhatsApp Cloud API!"
+    }
+  }
+
+}
+
+//https://graph.facebook.com/v16.0/your_phone_number_id/messages

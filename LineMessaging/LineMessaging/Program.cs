@@ -10,10 +10,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddSingleton<EmailMonitorService>();
-builder.Services.AddHostedService(
-    provider => provider.GetRequiredService<EmailMonitorService>()
-);
+//builder.Services.AddSingleton<EmailMonitorService>();
+//builder.Services.AddHostedService(
+//    provider => provider.GetRequiredService<EmailMonitorService>()
+//);
 
 
 var app = builder.Build();

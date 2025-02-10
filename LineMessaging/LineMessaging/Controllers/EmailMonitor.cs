@@ -26,8 +26,8 @@ public class EmailMonitor : IDisposable
     {
         _host = "imap.gmail.com";
         _port = 993;
-        _username = "@gmail.com";
-        _password = "";
+        _username = "tanaporn.fern1811@gmail.com";
+        _password = "khxohkrkitrkyrd";
         _timer = new Timer(CheckEmails, null, Timeout.Infinite, Timeout.Infinite);
     }
 
@@ -48,6 +48,7 @@ public class EmailMonitor : IDisposable
     {
         try
         {
+            #region
             //IMAP(Internet Message Access Protocol) is a widely used email protocol that allows clients to access and manage email messages stored on a remote email server
             // The main steps in the IMAP workflow are:
 
@@ -61,11 +62,12 @@ public class EmailMonitor : IDisposable
             //Moving or copying emails between folders
             //Searching for emails based on criteria
             //Changes made by the client are synchronized with the server, ensuring consistent email state across devices.
-
+            #endregion
+          
             CancellationToken cancellationToken = default;
-           _client = new ImapClient();
+            _client = new ImapClient();
             await _client.ConnectAsync("imap.gmail.com", 993, true, cancellationToken);
-            await _client.AuthenticateAsync("@gmail.com", "", cancellationToken);
+            await _client.AuthenticateAsync("tanaporn.fern1811@gmail.com", "gkhxohkrkitrkyrd", cancellationToken);
             _isConnected = true;
         }
         catch (Exception ex)
